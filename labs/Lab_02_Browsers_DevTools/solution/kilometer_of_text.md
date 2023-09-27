@@ -341,4 +341,5 @@ GET
 `course-id: 3 #` - id курса
 `group-id: 26420` - id группы
 `edu-type: internal` - тип обучения
+
 ---
