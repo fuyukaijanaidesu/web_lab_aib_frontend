@@ -341,5 +341,3 @@ GET
 `group-id: 26420` - id группы
 `edu-type: internal` - тип обучения
 ---
-
-![](https://vseokna.by/wp-content/themes/vseokna/images/stati/otkrytoe-okno.jpg)
