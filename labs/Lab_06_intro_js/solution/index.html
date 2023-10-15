@@ -1,1 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>JS</title>
+</head>
+<body>
+<script>
+    console.log("Задание 1");
+    let apple = 10;
+    console.log(apple);
+    let condition = Math.random().toString(36).substring(7);
+    console.log(condition);
+    console.log('Good game is ' + condition)
+
+    console.log("Задание 2");
+    let int = 42;
+    let string = '100';
+    let bool = true;
+
+    console.log(int);
+    console.log(string);
+    console.log(bool);
+
+    console.log(int + string);
+    console.log(int + bool);
+    console.log(string + bool);
+    console.log(int + string + bool);
+    console.log(string + int + bool);
+    console.log(bool + string + int);
+
+    console.log("Задание 3");
+    let array = [];
+
+    for (let i = 0; i < 10; i++) {
+      let randomNumber = Math.floor(Math.random() * 100) - 50;
+      array.push(randomNumber);
+    }
+
+    console.log("Исходный массив:", array);
+
+    let filteredArray = array.filter(num => num >= 0);
+
+    console.log("Отфильтрованный массив:", filteredArray);
+
+    console.log("Задание 4");
+    function getRandomNumber() {
+      return Math.random();
+    }
+
+    function multiplyArrayByNumber(arr, number) {
+      return arr.map(item => item * number);
+    }
+
+    const generateRandomWord = () => {
+      const alphabet = 'abcdefghijklmnopqrstuvwxyz';
+      let word = '';
+
+      for (let i = 0; i < 5; i++) {
+        const randomIndex = Math.floor(Math.random() * alphabet.length);
+        word += alphabet[randomIndex];
+      }
+
+      return word;
+    }
+
+    console.log(getRandomNumber());
+    console.log(multiplyArrayByNumber([1, 2, 3, 4], 5));
+    console.log(generateRandomWord());
+
+    console.log("Задание 5");
+
+    const person = {};
+    person.firstName = 'Иван';
+    person.surname = 'Иванов';
+    person.patronymic = 'Иванович';
+    person.birthday = '01.01.1990';
+    person.hobby = 'футбол';
+    person.group = 'А';
+
+    person.getInfo = function() {
+      const currentYear = new Date().getFullYear();
+      const birthYear = parseInt(this.birthday.split('.')[2]);
+      const age = currentYear - birthYear;
+
+      return `ФИО: ${this.surname} ${this.firstName} ${this.patronymic}\nГод рождения: ${birthYear}\nХобби: ${this.hobby}\nВозраст: ${age}`;
+    };
+
+    alert(person.getInfo());
+
+    const salaries = {
+      Иванов: 50000,
+      Петров: 60000,
+      Сидоров: 55000,
+      Козлов: 45000,
+      Смирнов: 70000,
+      Кузнецов: 65000,
+      Васильев: 55000,
+      Морозов: 50000,
+      Новиков: 55000,
+      Лебедев: 60000
+    };
+
+    let totalSalary = 0;
+    for (let key in salaries) {
+      totalSalary += salaries[key];
+    }
+
+    console.log('Общая зарплата сотрудников:', totalSalary);
+
+</script>
+<!-- /Вопросы\
+-Через какой оператор Вы объявили переменую?
+let
+
+-Какие доступны операторы для объявления переменных? В чём их отличия?
+let позволяет объявить переменную со значением, которое может быть изменено позже в коде. Переменная, объявленная с помощью let, имеет блочную область видимости.
+var имеет функциональную или глобальную область видимости, можнл обратится дое ее фактического объявления.
+const используется для объявления переменной со значением, которое не может быть изменено после присваивания. Имеет блочную область видимости.
+
+-Что происходит при вызове alert()?
+Выводит всплывающее сообщение на сайте с тем что указано в ()
+
+-Как Вы думаете для чего может использоваться console.log()
+Для проверки выполняется ли условие или нет. Отслеживание выполняется ли код. -->
+</body>
+</html>
 
