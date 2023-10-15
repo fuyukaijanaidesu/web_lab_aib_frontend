@@ -22,6 +22,7 @@ console.log(f[1]);
 console.log(f[2]);
 console.log(f[3]);
 console.log(f[4]);
+
 if (f[0] === 'apple') console.log('apple green')
 if (f[0] === 'strawberry') console.log('strawberry red')
 if (f[0] === 'blueberry') console.log('blueberry blue')
@@ -79,6 +80,7 @@ while (d === 0) {
         k = 0;
     }
 }
+
 alert('Затраты на ЗП' + d * k);
 ```
 ### Задание 4
