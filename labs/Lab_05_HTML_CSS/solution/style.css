@@ -1,52 +1,52 @@
 @media screen and (min-width: 1280px) {
-
-    header{
-        margin: 12px;
-        position: sticky;
-        top: 12px;
+    header {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        margin: 12px;
+        position: sticky;
+        top: 12px;
     }
 
-    header .logo{
-        text-align: center;
+    header .logo {
         padding-left: 15%;
         padding-right: 15%;
+        text-align: center;
     }
 
-    header .text_logo{
+    header .text_logo {
         display: block;
         padding-top: 2%;
     }
 
-    main .main-catalog{
+    main .main-catalog {
         display: grid;
-        grid-template-columns: repeat(3,1fr);
+        grid-template-columns: repeat(3, 1fr);
         margin-left: 2%;
         margin-right: 2%;
         place-items: center;
     }
-    h1{
+    h1 {
         margin-left: 6%;
     }
-    h2{
-            margin-left: 3%;
-        }
-    main .popular-catalog{
+    h2 {
+        margin-left: 3%;
+    }
+
+    main .popular-catalog {
         display: grid;
-        grid-template-columns: repeat(4,1fr);
+        grid-template-columns: repeat(4, 1fr);
         place-items: center;
     }
 
-    .item{
+    .item {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
 
-    main .popular-catalog .item img{
+    main .popular-catalog .item img {
         max-width: 80%;
     }
 
@@ -56,50 +56,50 @@
 }
 
 @media screen and (max-width: 320px) {
-    header{
-        margin: 12px;
-        position: sticky;
-        top: 12px;
+    header {
         display: flex;
         flex-direction: column;
         justify-content: center;
+        margin: 12px;
+        position: sticky;
+        top: 12px;
     }
 
-    header .logo{
-        text-align: center;
+    header .logo {
         padding-left: 15%;
         padding-right: 15%;
+        text-align: center;
     }
 
-    header .text_logo{
+    header .text_logo {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         padding-top: 2%;
     }
 
-    main .main-catalog{
+    main .main-catalog {
         display: grid;
-        grid-template-columns: repeat(1,1fr);
+        grid-template-columns: repeat(1, 1fr);
         margin-left: 2%;
         margin-right: 2%;
         place-items: center;
     }
 
-    main .popular-catalog{
+    main .popular-catalog {
         display: grid;
-        grid-template-columns: repeat(2,1fr);
+        grid-template-columns: repeat(2, 1fr);
         place-items: center;
     }
 
-    .item{
+    .item {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
 
-    main .popular-catalog .item img{
+    main .popular-catalog .item img {
         max-width: 80%;
     }
 
