@@ -2,123 +2,97 @@
 
 ### Задание 1. level stone
 ```js
-var a = prompt('var one');
-var _ = prompt('var two');
+var variable1 = prompt('var one');
+var variable2 = prompt('var two');
 
-if (a === _)
+if (variable1 === variable2)
 console.log('equally');
 else
 console.log('not equally');
-
-var b = 'world';
-var a = a + b;
 ```
 
 ### Задание №2. level iron
 ```js
-var f = new Array('apple', 'strawberry', 'blueberry', 'raspberry', 'lemon');
-console.log(f[0]);
-console.log(f[1]);
-console.log(f[2]);
-console.log(f[3]);
-console.log(f[4]);
-
-if (f[0] === 'apple') console.log('apple green')
-if (f[0] === 'strawberry') console.log('strawberry red')
-if (f[0] === 'blueberry') console.log('blueberry blue')
-if (f[0] === 'raspberry') console.log('raspberry light red')
-if (f[0] === 'lemon') console.log('lemon yellow')
-if (f[1] === 'apple') console.log('apple green')
-if (f[1] === 'strawberry') console.log('strawberry red')
-if (f[1] === 'blueberry') console.log('blueberry blue')
-if (f[1] === 'raspberry') console.log('raspberry light red')
-if (f[1] === 'lemon') console.log('lemon yellow')
-if (f[2] === 'apple') console.log('apple green')
-if (f[2] === 'strawberry') console.log('strawberry red')
-if (f[2] === 'blueberry') console.log('blueberry blue')
-if (f[2] === 'raspberry') console.log('raspberry light red')
-if (f[2] === 'lemon') console.log('lemon yellow')
-if (f[3] === 'apple') console.log('apple green')
-if (f[3] === 'strawberry') console.log('strawberry red')
-if (f[3] === 'blueberry') console.log('blueberry blue')
-if (f[3] === 'raspberry') console.log('raspberry light red')
-if (f[3] === 'lemon') console.log('lemon yellow')
-if (f[4] === 'apple') console.log('apple green')
-if (f[4] === 'strawberry') console.log('strawberry red')
-if (f[4] === 'blueberry') console.log('blueberry blue')
-if (f[4] === 'raspberry') console.log('raspberry light red')
-if (f[4] === 'lemon') console.log('lemon yellow')
+ var fruit = new Array('apple', 'strawberry', 'blueberry', 'raspberry', 'lemon');
+    for (var i = 0; i<fruit.length;i++){
+    console.log(fruit[i]);
+    }
+    for (var i = 0; i<fruit.length;i++){
+    if (fruit[i] === 'apple') console.log('apple green')
+    if (fruit[i] === 'strawberry') console.log('strawberry red')
+    if (fruit[i] === 'blueberry') console.log('blueberry blue')
+    if (fruit[i] === 'raspberry') console.log('raspberry light red')
+    if (fruit[i] === 'lemon') console.log('lemon yellow')
+    }
 ```
 
 ### Задание 3. level gold
 ```js
-var d = prompt('Введите кол-во человек ', undefined);
-if (!isNaN(parseFloat(d))) {
-    d = parseFloat(d)
-} else {
-    d = 0;
-}
-while (d === 0) {
-    var d = prompt('Введите кол-во человек ', undefined);
-    if (!isNaN(parseFloat(d))) {
-        d = parseFloat(d)
-    } else {
-        d = 0;
+function promptValidNumber(message) {
+    let input = prompt(message);
+    while (isNaN(parseFloat(input)) || parseFloat(input) <= 0) {
+        input = prompt(message);
     }
-}
-var k = prompt('Введите зарплату на человека ', undefined);
-if (!isNaN(parseFloat(k))) {
-    k = parseFloat(k);
-} else {
-    k = 0;
-}
-while (d === 0) {
-    var k = prompt('Введите зарплату на человека ', undefined);
-    if (!isNaN(parseFloat(k))) {
-        k = parseFloat(k)
-    } else {
-        k = 0;
-    }
+    return parseFloat(input);
 }
 
-alert('Затраты на ЗП' + d * k);
+const numberOfPeople = promptValidNumber('Введите кол-во человек');
+const salaryPerPerson = promptValidNumber('Введите зарплату на человека');
+const totalCost = numberOfPeople * salaryPerPerson;
+
+alert('Затраты на ЗП: ' + totalCost);
 ```
 ### Задание 4
 ```js
-var klassSoStudentami = [{
-    FIO: 'Петров А.А.',
-    Ocenka: 5
-}, {
-    FIO: 'Иванов Б.Б.',
-    Ocenka: 3.4
-}, {
-    FIO: 'Сидоров Г.Г.',
-    Ocenka: 9
-}, {
-    FIO: 'Немолодой Д.Д',
-    Ocenka: 2
-}, {
-    FIO: 'Молодой Е.Е',
-    Ocenka: 3.4
-}];
-var s = 0;
-var kolichectvo = 0;
-var ploxieStudenti = [];
-for (var PoryadkoviyNomer = 0; PoryadkoviyNomer < klassSoStudentami.length; PoryadkoviyNomer++) {
-    if (klassSoStudentami[PoryadkoviyNomer].Ocenka > 5) console.log('Это значение учитываться не будет оно не соответствует допустимым значениям');
-    if (klassSoStudentami[PoryadkoviyNomer].Ocenka < 0) console.log('Это значение учитываться не будет оно не соответствует допустимым значениям');
-    if (!(klassSoStudentami[PoryadkoviyNomer].Ocenka <= 5 && klassSoStudentami[PoryadkoviyNomer].Ocenka >= 0)) continue;
-    if (klassSoStudentami[PoryadkoviyNomer].Ocenka < 4) ploxieStudenti.push(klassSoStudentami[PoryadkoviyNomer])
-    s = s + klassSoStudentami[PoryadkoviyNomer].Ocenka;
-    kolichectvo = kolichectvo + 1;
+var studentsData = [
+    { fullName: 'Петров А.А.', grade: 5 },
+    { fullName: 'Иванов Б.Б.', grade: 3.4 },
+    { fullName: 'Сидоров Г.Г.', grade: 9 },
+    { fullName: 'Немолодой Д.Д', grade: 2 },
+    { fullName: 'Молодой Е.Е', grade: 3.4 }
+];
+
+var totalGrade = 0;
+var studentCount = 0;
+var lowGradedStudents = [];
+
+for (var studentIndex = 0; studentIndex < studentsData.length; studentIndex++) {
+    var currentGrade = studentsData[studentIndex].grade;
+
+    if (currentGrade > 5) {
+        console.log('Это значение учитываться не будет, так как не соответствует допустимым значениям.');
+        continue;
+    }
+
+    if (currentGrade < 0) {
+        console.log('Это значение учитываться не будет, так как не соответствует допустимым значениям.');
+        continue;
+    }
+
+    if (!(currentGrade <= 5 && currentGrade >= 0)) {
+        continue;
+    }
+
+    if (currentGrade < 4) {
+        lowGradedStudents.push(studentsData[studentIndex]);
+    }
+
+    totalGrade += currentGrade;
+    studentCount++;
 }
-s = s / kolichectvo;
-console.log('Средняя оценка: ' + s);
+
+var averageGrade = totalGrade / studentCount;
+console.log('Средняя оценка: ' + averageGrade.toFixed(2));
+
 console.log('Плохие студенты:');
-if (ploxieStudenti.length === 0) console.log('Таких нет');
-ploxieStudenti.forEach((znachenie) => {
-    console.log('Фио: ' + znachenie.FIO + '; Оценка: ' + znachenie.Ocenka)
+if (lowGradedStudents.length === 0) {
+    console.log('Таких нет');
+}
+
+lowGradedStudents.forEach((student) => {
+    console.log('ФИО: ' + student.fullName + '; Оценка: ' + student.grade);
 });
+
 ```
 ### Задание 5
 ##### Необходимо просмотреть свой код из предыдущей лабораторной работе и провести работу над ошибками (если, конечно, ошибки есть)
