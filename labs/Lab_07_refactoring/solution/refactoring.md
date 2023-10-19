@@ -13,17 +13,31 @@ console.log('not equally');
 
 ### Задание №2. level iron
 ```js
- var fruit = new Array('apple', 'strawberry', 'blueberry', 'raspberry', 'lemon');
-    for (var i = 0; i<fruit.length;i++){
+var fruit = new Array('apple', 'strawberry', 'blueberry', 'raspberry', 'lemon');
+for (var i = 0; i < fruit.length; i++) {
     console.log(fruit[i]);
+    
+    switch (fruit[i]) {
+        case 'apple':
+            console.log('apple green');
+            break;
+        case 'strawberry':
+            console.log('strawberry red');
+            break;
+        case 'blueberry':
+            console.log('blueberry blue');
+            break;
+        case 'raspberry':
+            console.log('raspberry light red');
+            break;
+        case 'lemon':
+            console.log('lemon yellow');
+            break;
+        default:
+            console.log('Unknown fruit');
     }
-    for (var i = 0; i<fruit.length;i++){
-    if (fruit[i] === 'apple') console.log('apple green')
-    if (fruit[i] === 'strawberry') console.log('strawberry red')
-    if (fruit[i] === 'blueberry') console.log('blueberry blue')
-    if (fruit[i] === 'raspberry') console.log('raspberry light red')
-    if (fruit[i] === 'lemon') console.log('lemon yellow')
-    }
+}
+
 ```
 
 ### Задание 3. level gold
