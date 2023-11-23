@@ -4,7 +4,6 @@ const blueInput = document.getElementById("blueInput");
 const colorArea = document.getElementById("square");
 let Color;
 
-// Function to update background color
 function updateBackgroundColor() {
     const red = redInput.value;
     const green = greenInput.value;
@@ -18,16 +17,13 @@ function updateBackgroundColor() {
     Color = `rgb(${red}, ${green}, ${blue})`;
     colorArea.style.backgroundColor = Color;
 
-    // Save the color to localStorage
     localStorage.setItem("savedColor", Color);
 }
 
-// Event listeners for input elements
 redInput.addEventListener("input", updateBackgroundColor);
 greenInput.addEventListener("input", updateBackgroundColor);
 blueInput.addEventListener("input", updateBackgroundColor);
 
-// Button click event to create blocks
 const button = document.getElementById("buttonInput");
 const block = document.getElementById("block");
 let count = 0;
@@ -39,7 +35,6 @@ button.addEventListener("click", () => {
 
     if (count >= max && existingBlock) {
         existingBlock.style.backgroundColor = Color;
-        // Save the color to localStorage for later use
         localStorage.setItem("savedColor", Color);
     } else {
         const newBlock = document.createElement("div");
@@ -53,26 +48,21 @@ button.addEventListener("click", () => {
     count++;
 });
 
-// Click event for color blocks
 block.addEventListener("click", (event) => {
     const clickedBlock = event.target;
 
-    // Check if the clicked element is a color block
     if (clickedBlock.className === "newBlock") {
         const savedColor = localStorage.getItem("savedColor");
 
-        // Update the background color of the clicked block
         if (savedColor) {
             clickedBlock.style.backgroundColor = savedColor;
         }
     }
 });
 
-// Click event for the entire document to reset other background colors
 document.addEventListener("click", (event) => {
     const clickedElement = event.target;
 
-    // Check if the clicked element is not the color area, input elements, or color blocks
     if (
         clickedElement !== colorArea &&
         clickedElement !== redInput &&
@@ -80,7 +70,6 @@ document.addEventListener("click", (event) => {
         clickedElement !== blueInput &&
         clickedElement.className !== "newBlock"
     ) {
-        // Reset the background color to the saved color
         const savedColor = localStorage.getItem("savedColor");
         if (savedColor) {
             clickedElement.style.backgroundColor = savedColor;
