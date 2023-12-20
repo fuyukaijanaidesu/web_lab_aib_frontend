@@ -1,0 +1,134 @@
+.calendar-container {
+  font-family: Arial, sans-serif;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #f0f0f0;
+}
+
+.days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+}
+
+.day {
+  position: relative;
+  padding: 10px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.day-number {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.has-note::after {
+  content: '•';
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  color: red;
+}
+
+.add-note-container {
+  margin-top: 20px;
+  text-align: center;
+}
+
+button {
+  padding: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.notes-list {
+  margin-top: 20px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+span {
+  margin-right: 10px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+.note-form-container {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.note-form {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+textarea {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.note-form button {
+  padding: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.note-form button:hover {
+  background-color: #45a049;
+}
+.today {
+  background-color: #add8e6; 
+}
+.day-info {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.day-info h3 {
+  margin-bottom: 5px;
+}
+
+.day-info ul {
+  list-style: none;
+  padding: 0;
+}
+
+.day-info li {
+  margin-bottom: 5px;
+}
+
+.day {
+  text-decoration: none;
+  color: inherit;
+}
+
+.day:hover {
+  background-color: #f0f0f0;
+}
