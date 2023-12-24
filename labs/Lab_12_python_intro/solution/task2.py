@@ -1,19 +1,19 @@
-import bisect
+import heapq
 
-def median_sum(N, X):
-    result_sum = 0
-    sorted_sequence = []
 
-    for i in range(N):
-        current_element = X[i]
-        bisect.insort_left(sorted_sequence, current_element)
-        result_sum += sorted_sequence[i // 2]
+def find_median(n, arr):
+    max_sq, min_sq, result = [], [], 0
 
-    return result_sum
+    for i in range(n):
+        heapq.heappush(max_sq, -arr[i])
+        heapq.heappush(min_sq, -heapq.heappop(max_sq))
 
-if __name__ == "__main__":
-    N = int(input())
-    X = list(map(int, input().split()))
-    result = median_sum(N, X)
-    print(result)
+        if len(min_sq) > len(max_sq):
+            heapq.heappush(max_sq, -heapq.heappop(min_sq))
+        result -= max_sq[0]
 
+    return result
+
+
+n, arr = int(input()), list(map(int, input().split()))
+print(find_median(n, arr))
