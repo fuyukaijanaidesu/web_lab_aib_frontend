@@ -15,5 +15,6 @@ def find_median(n, arr):
     return result
 
 
-n, arr = int(input()), list(map(int, input().split()))
-print(find_median(n, arr))
+if __name__ == '__main__':
+    n, arr = int(input()), list(map(int, input().split()))
+    print(find_median(n, arr))
