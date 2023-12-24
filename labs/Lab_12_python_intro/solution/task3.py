@@ -1,6 +1,7 @@
 from collections import Counter
 import string
 
+
 def build_histogram(text):
     char_counts = Counter(char for char in text if char not in string.whitespace)
     sorted_chars = sorted(char_counts)
@@ -15,5 +16,7 @@ def build_histogram(text):
     for char in sorted_chars:
         print(char, end=' ')
 
-encrypted_text = input()
-build_histogram(encrypted_text)
+
+if __name__ == '__main__':
+    encrypted_text = input()
+    build_histogram(encrypted_text)
