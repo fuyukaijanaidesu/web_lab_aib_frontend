@@ -10,13 +10,15 @@ def build_histogram(text):
     for i in range(max_count, 0, -1):
         for char in sorted_chars:
             count = char_counts[char]
-            print('#' if count >= i else ' ', end=' ')
+            print('#' if count >= i else ' ', end='')
         print()
 
     for char in sorted_chars:
-        print(char, end=' ')
+        print(char, end='')
 
 
 if __name__ == '__main__':
-    encrypted_text = input()
-    build_histogram(encrypted_text)
+    file_test = './input.txt'
+    with open(file_test, 'r') as file:
+        text = file.read().replace('\n', '')
+    build_histogram(text)
